@@ -1,3 +1,12 @@
 # UPS simulation and control
 
-A repository of algorithms for mathematical and heuristic optimization of an objective function. Each algorithm has its own folder, containing the code for the function and a standalone example.
+A program for simulation and control of uninterruptible power supply (UPS) systems. Considering an output stage comprising a half-bridge voltage source inverter (VSI) and output LC filter, it allows evaluating the operation of such electronic device under high-frequency switching and for different load configurations.
+
+The program contains the following file types:
+- MATLAB scripts for settings and controller design
+- Simulink model for controller
+- PSIM of UPS system
+
+Main file named as 'run_ups.m'.
+
+##
