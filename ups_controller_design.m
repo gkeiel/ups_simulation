@@ -38,18 +38,17 @@ end
     
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% augmented model %%%%%%%%%%%%%%%%%%%%%%%%%%% 
-Aa_max = [A_max  zeros(2,2*n_h)];
-Aa_min = [A_min  zeros(2,2*n_h)];
-Linha  = [-B_r*C A_r];
-Aa_max = [Aa_max; Linha];
-Aa_min = [Aa_min; Linha];
+Aa_max = [A_max  zeros(2,2*n_h);
+         -B_r*C  A_r];
+Aa_min = [A_min  zeros(2,2*n_h);
+         -B_r*C  A_r];
 Ba   = [B; zeros(2*n_h, 1)];
 Ca   = [C  zeros(1, 2*n_h)]; 
 Da   = 0;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LMI design %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% regional pole placement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% LMI-based design %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% regional pole placement and guaranteed-cost
 [n,m]  = size(Ba);
 Q      = sdpvar(n,n, 'symmetric');   % variável n x n simétrica
 W      = sdpvar(m,n);                % variável m x n

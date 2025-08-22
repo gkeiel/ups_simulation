@@ -1,21 +1,21 @@
 clc; clear; close all;
 
-% design specifications
-n_h   = 1;         % number of resonant modes
+% controller specifications
+n_h   = 4;         % number of resonant modes
 xi    = 0;         % damping factor of resonant modes
-alpha = 200;        % smallest real part of closed-loop poles 
+alpha = 250;       % smallest real part of closed-loop poles 
 pnlt  = 3;         % state penalty on guaranteed-cost
 
 % general specifications
-load  = 1;         % select load [1 linear, 2 nonlinear]
+load  = 2;         % select load [1 linear, 2 nonlinear]
 f     = 60;        % voltage reference frequency [Hz]
 fa    = 10020;     % sampling frequency [Hz]
 fs    = fa;        % switching frequency [Hz]
 Ts    = 1/(100*fa);% fundamental sampling period [s] (simulation step-size)
 T     = 1/fa;      % sampling period [s]
 t_end = 2;         % simulation time [s]
-t_ini = 0.8333; 
-t_fin = 1.1667;       
+t_ini = 50/f +1/(4*f); 
+t_fin = 70/f +1/(4*f);       
 
 % settings
 ups_settings
