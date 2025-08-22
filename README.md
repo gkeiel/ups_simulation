@@ -34,7 +34,7 @@ Consider a desired sinusoidal output voltage with $V_{rms} = 127$ V, $\omega_0 =
 $$C(s) = k_{e} +\frac{k_{{1}} +k_{{2}}s}{s^{2} +2\xi_{1}\omega_{r_1} s +\omega_{r_1}^{2}} +\frac{k_{{5}} +k_{{6}}s}{s^{2} +2\xi_{3}\omega_{r_3} s +\omega_{r_3}^{2}} +\frac{k_{{9}} +k_{{10}}s}{s^{2} +2\xi_{5}\omega_{r_5} s +\omega_{r_5}^{2}} +\frac{k_{{13}} +k_{{14}}s}{s^{2} +2\xi_{7}\omega_{r_7} s +\omega_{r_7}^{2}}
 $$
 
-where $\omega_{r_1} = \omega_0$, $\omega_{r_3} = 3\omega_0$, $\omega_{r_5} = 5\omega_0$, $\omega_{r_7} = 7\omega_0$ and $\xi_{1,3,5,7} = 0$. For this occasion, applying the Tustin approximation for $T = 0.998\, \mu s$, the following discrete-time transfer function was obtained
+where $\omega_{r_1} = \omega_0$, $\omega_{r_3} = 3\omega_0$, $\omega_{r_5} = 5\omega_0$, $\omega_{r_7} = 7\omega_0$ and $\xi_{1,3,5,7} = 0$. For this occasion, after tuning gains through a desired criteria and applying the Tustin approximation with $T = 0.998\ \mu s$, the following discrete-time transfer function was obtained
 
 $$C(z)
 =\frac{6.9976 (z-0.9659) (z-0.9239)}{(z^2 - 1.999z + 1)}
@@ -43,16 +43,13 @@ $$C(z)
 +\frac{(z^2 - 1.913z + 0.9753)}{(z^2 - 1.931z + 1)}.
 $$
 
-
-The figures in sequence show the UPS output voltage, $v_o(t)$, and output current, $i_o(t)$, measured waveforms considering the above internal model principle (IMP) controller in a real UPS. The following reponse was obtained for linear load:
+The figures in sequence show the UPS output voltage, $v_o(t)$, and output current, $i_o(t)$, measured waveforms considering the above internal model principle (IMP) controller in a real UPS. The following response was obtained for linear load:
 
 <div align="center">
 <img width="480" height="384" alt="ups_h4_lin" src="https://github.com/user-attachments/assets/7ac7fb53-5727-496b-afc3-b964aec5bdd8"/>
 </div>
 
-The following reponse was obtained for non-linear load:
+The following response was obtained for non-linear load:
 <div align="center">
 <img width="480" height="384" alt="ups_h4_nlin" src="https://github.com/user-attachments/assets/3c69d625-a854-43f9-887c-3efc26e1bac3"/>
 </div>
-
-In sequence, the harmonic content distribution and THD obtained for the nonlinear load are presented, demonstrating the efficiency of disturbance rejection.
